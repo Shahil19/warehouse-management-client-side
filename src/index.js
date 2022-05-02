@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//------------------
-// bootstrap
+//------------------ bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+// --------------- toastify
+import 'react-toastify/dist/ReactToastify.css';
+
 import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
   <React.StrictMode>

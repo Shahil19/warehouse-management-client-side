@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Form, Nav } from 'react-bootstrap';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
 
 const Register = () => {
@@ -31,12 +32,21 @@ const Register = () => {
             createUserWithEmailAndPassword(email, password)
             setPasswordMatchError('')
             event.target.reset()
+            toast.success(`🦄 Welcome to shared soft!
+            🦄 verification Email Sent
+            `, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         } else {
             setPasswordMatchError('two password did not match')
         }
     }
-
-
     return (
         <div>
             <h2 className='text-center'>Please Register</h2>

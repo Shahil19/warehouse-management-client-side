@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
 import Inventory from './Pages/Home/Inventory/Inventory';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
