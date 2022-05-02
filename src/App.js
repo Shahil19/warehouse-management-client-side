@@ -8,6 +8,7 @@ import ManageItems from './Pages/ManageItems/ManageItems';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
+import Inventory from './Pages/Home/Inventory/Inventory';
 
 function App() {
   return (
@@ -16,9 +17,13 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        {/* <Route path='/items' element={}></Route> */}
+        {/* <Route path='/items' element={<Inventory></Inventory>}></Route> */}
 
-        <Route path='/manageItems' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/manageItems' element={
+          <RequireAuth>
+            <ManageItems></ManageItems>
+          </RequireAuth>
+        }></Route>
         <Route path='/addItem' element={
           <RequireAuth>
             <AddItem></AddItem>
