@@ -1,19 +1,25 @@
-import React from 'react';
+// import { async } from '@firebase/util';
+import React, { useState } from 'react';
 import { Button, Form, Nav } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const Register = () => {
+    const [passwordMatchError, setPasswordMatchError] = useState('')
 
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
-    const handleCreateUser = (event) => {
+    const [currentUser, currentUserLoading, currentUserError] = useAuthState(auth);
+
+    // const [sendEmailVerification, sending, verificationError] = useSendEmailVerification(auth);
+
+    const handleCreateUser = async (event) => {
         event.preventDefault()
         const name = event.target.name.value
         const email = event.target.email.value
@@ -22,15 +28,15 @@ const Register = () => {
 
         // creates new user
         if (password === confirmPassword) {
-            const user = { name, email, password, confirmPassword }
             createUserWithEmailAndPassword(email, password)
-            console.log(user);
+            setPasswordMatchError('')
+            event.target.reset()
+        } else {
+            setPasswordMatchError('two password did not match')
         }
+    }
 
-    }
-    if (user) {
-        console.log(user);
-    }
+
     return (
         <div>
             <h2 className='text-center'>Please Register</h2>
@@ -54,6 +60,12 @@ const Register = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control name='confirmPassword' type="password" placeholder="Confirm Password" />
                 </Form.Group>
+
+                <Form.Text className="text-muted">
+                    {
+                        passwordMatchError && <p className='text-danger'>{passwordMatchError}</p>
+                    }
+                </Form.Text>
                 <Form.Text className="text-muted">
                     {
                         loading && <p className='text-success'>Loading...</p>
