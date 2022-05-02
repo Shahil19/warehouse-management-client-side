@@ -9,7 +9,7 @@ const Login = () => {
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        loginError,
     ] = useSignInWithEmailAndPassword(auth);
 
 
@@ -22,6 +22,7 @@ const Login = () => {
         // Login user
         signInWithEmailAndPassword(email, password)
     }
+
     return (
         <div>
             <div className='w-50 mx-auto'>
@@ -36,6 +37,11 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control name='password' type="password" placeholder="Password" required />
                     </Form.Group>
+                    <Form.Text className="text-muted">
+                        {
+                            loginError && <p className='text-danger'>{loginError.message}</p>
+                        }
+                    </Form.Text>
                     <Form.Text >
                         <Nav.Link className='text-black' as={Link} to='/register'><span>New to shared soft?</span> <span className='text-primary '>Register</span> </Nav.Link>
                     </Form.Text>
