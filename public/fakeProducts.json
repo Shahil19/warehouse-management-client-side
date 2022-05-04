@@ -1,0 +1,18 @@
+[{
+        "name": "iphone-13",
+        "description": "super phone",
+        "img": "https://i.ibb.co/t8FQxK8/iphone-13-1.png",
+        "price": 770,
+        "quantity": 5,
+        "supplier-name": "karim Ali"
+    },
+    {
+        "name": "Samsung S21 ultra",
+        "description": "super phone",
+        "img": "https://i.ibb.co/t8FQxK8/iphone-13-1.png",
+        "price": 770,
+        "quantity": 5,
+        "supplier-name": "karim Ali"
+    }
+
+]

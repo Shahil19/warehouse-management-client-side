@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Pages/Shared/Header/Header';
 import { Route, Routes } from 'react-router-dom';
@@ -8,8 +7,10 @@ import ManageItems from './Pages/ManageItems/ManageItems';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Shared/RequireAuth/RequireAuth';
-import Inventory from './Pages/Home/Inventory/Inventory';
 import { ToastContainer } from 'react-toastify';
+import ProductDetail from './Pages/Home/ProductDetail/ProductDetail';
+import Footer from './Pages/Shared/Footer/Footer';
+import Inventory from './Pages/Home/Inventory/Inventory';
 
 function App() {
   return (
@@ -18,7 +19,6 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        {/* <Route path='/items' element={<Inventory></Inventory>}></Route> */}
 
         <Route path='/manageItems' element={
           <RequireAuth>
@@ -30,21 +30,16 @@ function App() {
             <AddItem></AddItem>
           </RequireAuth>
         }></Route>
+
+        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/product/:id' element={<ProductDetail></ProductDetail>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
   );
 }
 
 export default App;
-
-/* 
-https://ibb.co/68dYwL2
-https://ibb.co/3rFppgR
-https://ibb.co/vkVHtKz
-https://ibb.co/G20NrPt
-https://ibb.co/LCmbC90
-https://ibb.co/gMz6wzL
-*/
