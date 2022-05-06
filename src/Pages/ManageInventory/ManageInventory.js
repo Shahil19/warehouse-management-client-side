@@ -19,8 +19,8 @@ const ManageInventory = () => {
                         ></Product>
                     ))
                 }
-                <button onClick={() => navigateToAddProduct('/addItem')} className='my-4 btn btn-primary w-2/4 mx-auto d-block'>Add Product</button>
             </div>
+            <button onClick={() => navigateToAddProduct('/addItem')} className='my-4 btn btn-primary w-2/4 mx-auto d-block'>Add Product</button>
         </div>
     );
 };

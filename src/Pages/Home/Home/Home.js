@@ -14,7 +14,7 @@ const Home = () => {
     }, [])
 
     const navigateToAddProduct = useNavigate()
-
+    console.log(process.env.NAME);
     return (
         <div>
             <Banner></Banner>

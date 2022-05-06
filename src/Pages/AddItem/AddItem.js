@@ -8,7 +8,7 @@ import auth from '../../firebase.init';
 const AddItem = () => {
     const { register, handleSubmit, reset } = useForm();
     const [currentUser] = useAuthState(auth);
-    const navigateToHome = useNavigate()
+    const navigate = useNavigate()
 
 
     const onSubmit = data => {
@@ -37,7 +37,7 @@ const AddItem = () => {
                         draggable: true,
                         progress: undefined,
                     });
-                    navigateToHome('/')
+                    navigate('/manageInventory')
                 } else {
                     toast.error(`${json.user} `, {
                         position: "top-right",

@@ -18,7 +18,7 @@ We have a sample task for you.
 1.  Home page will have a header (simple navbar), banner, items (inventory items that you are managing. Maximum 6 items), and footer.
 
 2.  Add two extra sections on the home page and the four sections mentioned above. Tips: This is the place to shine. Add something different and unique to make your website looks different than others. And Make them relevant to your website.
-<!----------- two section left ------------------>
+<!----------- done ------------------>
 
 3.  You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name, image, short description, price, quantity, supplier name, and an update button (button could say: update or manage or stock update, etc.).
 <!-------------------------- done -------------------------------->
@@ -27,7 +27,7 @@ We have a sample task for you.
 <!-------------------------- Done -------------------------------->
 
 5.  The `inventory/:id` page should display detailed item information like id, name, image, description, price, quantity, supplier name, sold, etc. This page will have a Button named `delivered`. Once this button is clicked, it will reduce the quantity of the item by one. Make sure this data is saved on the database, and the change in quantity is displayed on the website.
-<!-------------------------- left (delivered button decreases one product) -------------------------------->
+<!-------------------------- done -------------------------------->
 
 6.  There will be a small form on the `inventory/:id` page. The from will say, restock the items. You will have an input field where you can put some numbers. And hitting the button will increase the quantity of the item.
 <!-------------------------- done -------------------------------->
@@ -36,7 +36,7 @@ We have a sample task for you.
 <!-------------------------- done -------------------------------->
 
 8.  ON the Manage Inventories page, there will be a button named `add new item`. You can change the name of the button if you want. You will be taken to the add inventory item page by clicking on this button. There will be able to add a new inventory item. Feel free to use, react hook form or html5 form. On this page, you can put an input field to put an image url. (For simplicity, you can upload the image to imgbb or other images hosting website and then put the url on the input field)
-<!-------------------------- add new button left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 9.  Implement email/password-based authentication and at least one social login(google, facebook, github, etc.) authentication. Once a user is logged in, the logout/sign-out button should appear on the header, signing out the user once clicked.
 <!-------------------------- done -------------------------------->
@@ -63,7 +63,7 @@ We have a sample task for you.
     <!-------------------------- done -------------------------------->
 
 14. Create a meaningful 404 page (not found page)
-<!-------------------------- left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 ### Bonus:
 
