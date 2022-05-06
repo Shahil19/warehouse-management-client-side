@@ -70,7 +70,7 @@ const Product = ({ product }) => {
               <th className="w-1/4" scope="row">
                 Description
               </th>
-              <td colSpan="2">{"trimmedDescription"}...read more</td>
+              <td colSpan="2">{"trimmedDescription"}<span onClick={() => handleProductDetail(_id)} className="text-primary">...read more</span></td>
             </tr>
             <tr>
               <th className="w-1/4" scope="row">

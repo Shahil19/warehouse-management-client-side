@@ -2,49 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useProductDetail from '../../../hooks/useProductDetail';
 
 const ProductDetail = () => {
     const { register, handleSubmit, reset } = useForm();
     const id = useParams().id
 
-    const [productDetail, setProductDetail] = useState({})
+    const [productDetail, setProductDetail] = useProductDetail(id)
     const { productName, description, stock, supplierName, img, price } = productDetail;
 
-    useEffect(() => {
-        const url = `https://afternoon-harbor-69950.herokuapp.com/product/${id}`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setProductDetail(data))
-
-    })
-
-
-    // const navigateToHome = useNavigate()
-
-    // const handleDeleteProduct = () => {
-    //     const proceed = window.confirm(`Are you sure you want to delete ${productName}`)
-    //     if (proceed) {
-    //         fetch(`https://afternoon-harbor-69950.herokuapp.com/product/${id}`, {
-    //             method: 'DELETE',
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 toast.error(`${productName} deleted!!`, {
-    //                     position: "top-right",
-    //                     autoClose: 5000,
-    //                     hideProgressBar: false,
-    //                     closeOnClick: true,
-    //                     pauseOnHover: true,
-    //                     draggable: true,
-    //                     progress: undefined,
-    //                 });
-    //                 navigateToHome('/')
-    //             })
-    //     }
-    // }
-
     // ----------------- update stock
-
     const updateStock = data => {
         const updatedStock = parseInt(stock) + parseInt(data.stock)
         console.log({ stock: updatedStock });
@@ -67,7 +34,7 @@ const ProductDetail = () => {
             <h2 className='text-center'>Product Detail</h2>
 
             <div className="card mb-3">
-                <img src={img} className="card-img-top w-full mx-auto" alt="..." />
+                <img src={img} style={{ maxWidth: '50%' }} className="card-img-top w-full mx-auto" alt="..." />
                 <div className="table-responsive">
                     <h4 className='text-center'>{productName}</h4>
                     <table className="table w-3/4">
