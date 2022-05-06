@@ -15,32 +15,33 @@ const ProductDetail = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setProductDetail(data))
-        console.log('sh');
+
     })
 
 
-    const navigateToHome = useNavigate()
-    const handleDeleteProduct = () => {
-        const proceed = window.confirm(`Are you sure you want to delete ${productName}`)
-        if (proceed) {
-            fetch(`https://afternoon-harbor-69950.herokuapp.com/product/${id}`, {
-                method: 'DELETE',
-            })
-                .then(res => res.json())
-                .then(data => {
-                    toast.error(`${productName} deleted!!`, {
-                        position: "top-right",
-                        autoClose: 5000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                    navigateToHome('/')
-                })
-        }
-    }
+    // const navigateToHome = useNavigate()
+
+    // const handleDeleteProduct = () => {
+    //     const proceed = window.confirm(`Are you sure you want to delete ${productName}`)
+    //     if (proceed) {
+    //         fetch(`https://afternoon-harbor-69950.herokuapp.com/product/${id}`, {
+    //             method: 'DELETE',
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 toast.error(`${productName} deleted!!`, {
+    //                     position: "top-right",
+    //                     autoClose: 5000,
+    //                     hideProgressBar: false,
+    //                     closeOnClick: true,
+    //                     pauseOnHover: true,
+    //                     draggable: true,
+    //                     progress: undefined,
+    //                 });
+    //                 navigateToHome('/')
+    //             })
+    //     }
+    // }
 
     // ----------------- update stock
 
@@ -97,7 +98,7 @@ const ProductDetail = () => {
                     </table>
                     <div className='d-flex justify-around'>
                         {/* <button onClick={handleUpdateProduct} className="btn btn-success mx-auto w-1/3 d-block">Update Stock</button> */}
-                        <button onClick={handleDeleteProduct} className="btn btn-danger mx-auto w-1/3 d-block">Delete Product</button>
+                        <button className="btn btn-danger mx-auto w-1/3 d-block">Delete Product</button>
                     </div>
                 </div>
             </div>

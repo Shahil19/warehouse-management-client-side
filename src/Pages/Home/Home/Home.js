@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Inventory from '../Inventory/Inventory';
 
 const Home = () => {
     const [products, setProducts] = useState([])
-    console.log(products);
     useEffect(() => {
         fetch('https://afternoon-harbor-69950.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+
+    const navigateToAddProduct = useNavigate()
+
     return (
         <div>
-            <h1 className="text-center text-cyan-500 text-6xl font-bold underline">
-                Hello world!
-            </h1>
             <Banner></Banner>
-            <Inventory></Inventory>
+            <Inventory>
+                <button onClick={() => navigateToAddProduct('/addItem')} className='my-4 btn btn-primary w-2/4 mx-auto d-block'>Add Product</button>
+            </Inventory>
+
+            <Link to='/inventory' >
+                <button className='btn btn-primary d-block mx-auto'>Manage Inventories</button>
+            </Link>
         </div>
     );
 };

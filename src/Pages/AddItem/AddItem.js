@@ -9,6 +9,8 @@ const AddItem = () => {
     const { register, handleSubmit, reset } = useForm();
     const [currentUser] = useAuthState(auth);
     const navigateToHome = useNavigate()
+
+
     const onSubmit = data => {
         const email = currentUser.email;
 
@@ -19,21 +21,36 @@ const AddItem = () => {
                 ...data, email
             }),
             headers: {
+                'authorization': `${email} ${localStorage.getItem('accessToken')}`,
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
             .then((response) => response.json())
             .then((json) => {
-                toast.success(`🦄 ${data.productName} added`, {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                });
-                navigateToHome('/')
+                if (json.insertedId) {
+                    toast.success(`🦄 ${data.productName} added`, {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                    navigateToHome('/')
+                } else {
+                    toast.error(`${json.user} `, {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    });
+                }
+
+
             });
         reset()
     };

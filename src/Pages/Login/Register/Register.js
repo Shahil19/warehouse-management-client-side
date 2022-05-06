@@ -5,6 +5,7 @@ import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerificati
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../../firebase.init';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Register = () => {
     const [passwordMatchError, setPasswordMatchError] = useState('')
@@ -93,10 +94,11 @@ const Register = () => {
                     <Nav.Link className='text-black' as={Link} to='/login'><span>Already a member of shared soft?</span> <span className='text-primary '>Login</span> </Nav.Link>
                 </Form.Text>
                 <Form.Group className="d-grid gap-2">
-                    <Button variant="primary" type="submit">
+                    <Button className='my-2' variant="primary" type="submit">
                         Register
                     </Button>
                 </Form.Group>
+                <GoogleLogin></GoogleLogin>
             </Form>
         </div>
     );
