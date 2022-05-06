@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useProduct from '../../../hooks/useProduct';
 import Product from '../Product/Product';
 
 const Inventory = ({ handleDeleteProduct }) => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('https://afternoon-harbor-69950.herokuapp.com/product')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+    const [products, setProducts] = useProduct()
 
     const navigateToAddProduct = useNavigate()
     return (

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useProduct from '../../hooks/useProduct';
 import Product from '../Home/Product/Product';
 
 const ManageInventory = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('https://afternoon-harbor-69950.herokuapp.com/product')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+
+    const [products, setProducts] = useProduct()
+
     return (
         <div>
             <h1 className='text-center'>Manage All Products</h1>
