@@ -19,8 +19,7 @@ const Home = () => {
             <Inventory>
                 <button onClick={() => navigateToAddProduct('/addItem')} className='my-4 btn btn-primary w-2/4 mx-auto d-block'>Add Product</button>
             </Inventory>
-
-            <Link to='/inventory' >
+            <Link to='/manageInventory' >
                 <button className='btn btn-primary d-block mx-auto'>Manage Inventories</button>
             </Link>
         </div>

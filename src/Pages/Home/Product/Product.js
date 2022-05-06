@@ -18,13 +18,14 @@ const Product = ({ product }) => {
     const proceed = window.confirm(
       `Are you sure you want to delete ${productName}`
     );
+
     if (proceed) {
       fetch(`https://afternoon-harbor-69950.herokuapp.com/product/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
-          toast.error(`${""} deleted!!`, {
+          toast.error(`${productName} deleted!!`, {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -36,7 +37,6 @@ const Product = ({ product }) => {
           navigate("/");
         });
     }
-    console.log(product);
   };
   return (
     <div className="col">
