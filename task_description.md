@@ -21,7 +21,7 @@ We have a sample task for you.
 <!----------- two section left ------------------>
 
 3.  You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name, image, short description, price, quantity, supplier name, and an update button (button could say: update or manage or stock update, etc.).
-<!-------------------------- left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 4.  Clicking on the button will take the user to the `inventory/:id` route. This route will be a private/protected route. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the page he/she wanted to go to. Also, after reloading the page of a private route, the user is not redirected to the login page.
 <!-------------------------- Done -------------------------------->
@@ -63,6 +63,7 @@ We have a sample task for you.
     <!-------------------------- done -------------------------------->
 
 14. Create a meaningful 404 page (not found page)
+<!-------------------------- left -------------------------------->
 
 ### Bonus:
 
@@ -75,9 +76,11 @@ We have a sample task for you.
 <!-------------------------- done -------------------------------->
 
 4. Meaningful `readme.md` file containing your website name, a short description, link to your live site. And at least five bullet points mention your website's different features and functionality.
+<!-------------------------- left -------------------------------->
 
 5. Make the website responsive. Make sure the site looks different on desktop and mobile responsive. Tablet responsive is optional
 <!-------------------------- done -------------------------------->
+
 6. Make the website meaningful and consistent in look and feel. Give your website a relevant name. Images and all the content of the website have to be relevant. No `lorem ipsum` please.
 <!-------------------------- done -------------------------------->
 

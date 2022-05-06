@@ -6,14 +6,13 @@ const MyProduct = () => {
     const [currentUser] = useAuthState(auth);
     const email = currentUser?.email
 
-    // const [myProduct, setMyProduct] = useState([])
-    // useEffect(() => {
-    //     const url = `https://afternoon-harbor-69950.herokuapp.com/userProduct/${email}`
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(data => setMyProduct(data))
-    //     console.log('sh');
-    // })
+    const [userProduct, setUserProduct] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/userProduct')
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }, [])
 
     // console.log(myProduct);
     return (

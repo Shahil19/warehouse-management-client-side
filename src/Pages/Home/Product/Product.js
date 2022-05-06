@@ -18,7 +18,6 @@ const Product = ({ product }) => {
     const proceed = window.confirm(
       `Are you sure you want to delete ${productName}`
     );
-
     if (proceed) {
       fetch(`https://afternoon-harbor-69950.herokuapp.com/product/${_id}`, {
         method: "DELETE",
@@ -38,6 +37,7 @@ const Product = ({ product }) => {
         });
     }
   };
+
   return (
     <div className="col">
       <div className="card">
@@ -80,17 +80,17 @@ const Product = ({ product }) => {
             </tr>
           </tbody>
         </table>
-        <div className="d-flex justify-content-between gap-2 px-3">
+        <div className="d-flex justify-content-between gap-2 px-3 mb-3">
           <button
             onClick={() => handleProductDetail(_id)}
-            className="btn btn-primary"
+            className="btn btn-primary "
             type="button"
           >
             Update Stock
           </button>
           <button
             onClick={() => handleDeleteProduct(product)}
-            className="btn btn-danger"
+            className="btn btn-danger "
             type="button"
           >
             Delete Product

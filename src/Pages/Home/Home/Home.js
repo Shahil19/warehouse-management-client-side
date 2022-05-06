@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Inventory from '../Inventory/Inventory';
+import OurPartners from '../OurPartners/OurPartners';
+import MainFeatures from '../ProductDetail/MainFeatures/MainFeatures';
 
 const Home = () => {
     const [products, setProducts] = useState([])
@@ -20,8 +22,10 @@ const Home = () => {
                 <button onClick={() => navigateToAddProduct('/addItem')} className='my-4 btn btn-primary w-2/4 mx-auto d-block'>Add Product</button>
             </Inventory>
             <Link to='/manageInventory' >
-                <button className='btn btn-primary d-block mx-auto'>Manage Inventories</button>
+                <button className='btn btn-primary d-block mx-auto my-4'>Manage Inventories</button>
             </Link>
+            <MainFeatures></MainFeatures>
+            <OurPartners></OurPartners>
         </div>
     );
 };
