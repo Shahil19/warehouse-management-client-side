@@ -88,6 +88,17 @@ const ProductDetail = () => {
             <h2 className='text-center'>Product Detail</h2>
 
             <div className="card mb-3">
+                {
+                    (stock <= 0) ? (<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        SOLD OUT
+                        <span class="visually-hidden">unread messages</span>
+                    </span>)
+                        :
+                        (<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+                            Available
+                            <span class="visually-hidden">unread messages</span>
+                        </span>)
+                }
                 <img src={img} style={{ maxHeight: '50vh' }} className=" mx-auto" alt="..." />
                 <div className="table-responsive">
                     <h4 className='text-center'>{productName}</h4>
@@ -101,7 +112,11 @@ const ProductDetail = () => {
                             </tr>
                             <tr>
                                 <th className='md:w-1/4 w-1/3' scope="row">Price</th>
-                                <td colSpan="2">{price}</td>
+                                <td colSpan="2">{price} BDT</td>
+                            </tr>
+                            <tr>
+                                <th className='md:w-1/4 w-1/3' scope="row">Total Price</th>
+                                <td colSpan="2">{price * stock} BDT</td>
                             </tr>
                             <tr>
                                 <th className='md:w-1/4 w-1/3' scope="row">Supplier</th>

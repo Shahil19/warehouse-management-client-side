@@ -16,9 +16,9 @@ We have a sample task for you.
 ### Task Details:
 
 1.  Home page will have a header (simple navbar), banner, items (inventory items that you are managing. Maximum 6 items), and footer.
-
+<!-------------------------- done -------------------------------->
 2.  Add two extra sections on the home page and the four sections mentioned above. Tips: This is the place to shine. Add something different and unique to make your website looks different than others. And Make them relevant to your website.
-<!----------- done ------------------>
+<!-------------------------- done -------------------------------->
 
 3.  You will have six items in the inventory items section. You can put one or more items in a row based on your design. Each article should have a relevant name, image, short description, price, quantity, supplier name, and an update button (button could say: update or manage or stock update, etc.).
 <!-------------------------- done -------------------------------->
@@ -45,7 +45,7 @@ We have a sample task for you.
 <!-------------------------- done -------------------------------->
 
 11. On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the `Manage Inventories` page also, from the `My Items` page.
-<!-------------------------- left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 12. No Fake data (data must be hosted on the database). Database could be mongodb atlas or any other noSQL database.
 <!-------------------------- done -------------------------------->
@@ -76,7 +76,7 @@ We have a sample task for you.
 <!-------------------------- done -------------------------------->
 
 4. Meaningful `readme.md` file containing your website name, a short description, link to your live site. And at least five bullet points mention your website's different features and functionality.
-<!-------------------------- left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 5. Make the website responsive. Make sure the site looks different on desktop and mobile responsive. Tablet responsive is optional
 <!-------------------------- done -------------------------------->
@@ -94,10 +94,10 @@ We have a sample task for you.
 <!-------------------------- left -------------------------------->
 
 10. Implement the basic version of the `jwt` token for email/password based authentication. Upon login, you will create a jwt token and store it on the client-side, and for the `My Items` page, you will send the token with the call and verify the user. Implementing 401 and 403 is optional. For social login, jwt token implementation is optional.
-<!-------------------------- left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 11. Create a `stackoverflow` profile and post a question or an answer at the time of submitting your assignment. You will submit the link to the stackoverflow question. If you do not want to add a question, you can add an answer on stackoverflow. If you can't add a stackoverflow question/answer, you can submit a github issue to any library that you are using. Your question or answer has to be a meaningful question or answer.
-<!-------------------------- left -------------------------------->
+<!-------------------------- done -------------------------------->
 
 ### Optional but highly encourage:
 

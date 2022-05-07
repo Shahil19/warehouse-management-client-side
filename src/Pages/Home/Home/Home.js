@@ -12,9 +12,9 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
-
     const navigateToAddProduct = useNavigate()
-    console.log(process.env.NAME);
+    console.log(process.env.REACT_APP_NAME);
+    console.log(process.env.REACT_APP_user);
     return (
         <div>
             <Banner></Banner>

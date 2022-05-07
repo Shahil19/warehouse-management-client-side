@@ -9,7 +9,7 @@ const ManageInventory = () => {
     const navigateToAddProduct = useNavigate()
     return (
         <div>
-            <h1 className='text-center'>Manage All Products</h1>
+            <h1 className='text-center my-3'>Manage All Products</h1>
             <div className="row row-cols-1 row-cols-md-2  g-4 container mx-auto">
                 {
                     products.map(product => (
